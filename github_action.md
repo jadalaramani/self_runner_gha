@@ -64,7 +64,42 @@ on:
     branches: [ main ]
   workflow_dispatch:
 ```
+##  How GitHub Actions Works Internally
+1. Event Trigger — A code push, PR, schedule, or manual dispatch triggers the workflow.
+2. GitHub Actions Runner — A virtual machine or container executes the jobs.
+3. Checkout & Build — The runner pulls your repo, installs dependencies, and executes steps.
+4. Artifacts & Caching — Optional steps to store build output or cache dependencies.
+5. Deployment — The runner interacts with cloud services (AWS, GCP, Azure, etc.) to deploy.
+6. Logs & Notifications — Every step’s output is stored and viewable in the GitHub UI.
 
+
+## Types of GitHub Runners
+#### 1. GitHub-Hosted Runners (Default)
+
+Ready-to-use VM (Ubuntu, Windows, macOS)
+
+Auto-provisioned and destroyed after each run
+
+Good for most use cases
+```
+runs-on: ubuntu-latest
+```
+#### 2. Self-Hosted Runners
+
+You host your own machine (on-prem or cloud)
+
+Can have custom software installed
+
+Useful for secure networks or large builds
+```
+runs-on: self-hosted
+```
+
+Note: You can label self-hosted runners and target them in jobs:
+
+```
+runs-on: [self-hosted, linux, x64]
+```
 ---
 
 ##  5. **Basic CI/CD Workflow Example**
