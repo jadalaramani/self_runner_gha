@@ -18,6 +18,9 @@ sudo yum install -y curl tar git jq
 
 Install libraries for .NET runtime (needed by GitHub runner):
 
+```
+sudo yum install -y libicu
+```
 ```bash
 sudo ./bin/installdependencies.sh
 ```
@@ -42,6 +45,7 @@ Now you’re logged in as `github`.
 Check the latest release here: [https://github.com/actions/runner/releases](https://github.com/actions/runner/releases)
 
 Example for v2.320.0:
+
 
 ```bash
 mkdir ~/actions-runner && cd ~/actions-runner
