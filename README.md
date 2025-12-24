@@ -21,10 +21,6 @@ Install libraries for .NET runtime (needed by GitHub runner):
 ```
 sudo yum install -y libicu
 ```
-```bash
-sudo ./bin/installdependencies.sh
-```
-
 ---
 
 ## 3. Create Runner User (recommended)
